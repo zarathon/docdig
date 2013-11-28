@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  numero: MyString
+  data: 2013-11-28 14:14:38
+  codigo: MyString
+  observacao: MyText
+  enviado: false
+
+two:
+  numero: MyString
+  data: 2013-11-28 14:14:38
+  codigo: MyString
+  observacao: MyText
+  enviado: false

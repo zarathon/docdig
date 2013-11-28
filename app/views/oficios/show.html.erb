@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Numero:</b>
+  <%= @oficio.numero %>
+</p>
+
+<p>
+  <b>Data:</b>
+  <%= @oficio.data %>
+</p>
+
+<p>
+  <b>Codigo:</b>
+  <%= @oficio.codigo %>
+</p>
+
+<p>
+  <b>Observacao:</b>
+  <%= @oficio.observacao %>
+</p>
+
+<p>
+  <b>Enviado:</b>
+  <%= @oficio.enviado %>
+</p>
+
+<p>
+<%= image_tag @oficio.arquivo.url(:miniatura) %>
+</p>
+<p>
+<%= link_to "Download do arquivo original", @oficio.arquivo.url %>
+</p>
+
+<%= link_to 'Edit', edit_oficio_path(@oficio) %> |
+<%= link_to 'Back', oficios_path %>

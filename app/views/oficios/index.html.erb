@@ -1,0 +1,31 @@
+<h1>Listing oficios</h1>
+
+<table>
+  <tr>
+    <th>Numero</th>
+    <th>Data</th>
+    <th>Codigo</th>
+    <th>Observacao</th>
+    <th>Enviado</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @oficios.each do |oficio| %>
+  <tr>
+    <td><%= oficio.numero %></td>
+    <td><%= oficio.data %></td>
+    <td><%= oficio.codigo %></td>
+    <td><%= oficio.observacao %></td>
+    <td><%= oficio.enviado %></td>
+    <td><%= link_to 'Show', oficio %></td>
+    <td><%= link_to 'Edit', edit_oficio_path(oficio) %></td>
+    <td><%= link_to 'Destroy', oficio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Oficio', new_oficio_path %>

@@ -1,0 +1,41 @@
+<%= form_for(@oficio , :html => { :multipart => true }) do |f| %>
+  <% if @oficio.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@oficio.errors.count, "error") %> prohibited this oficio from being saved:</h2>
+
+      <ul>
+      <% @oficio.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :numero %><br />
+    <%= f.text_field :numero %>
+  </div>
+  <div class="field">
+    <%= f.label :data %><br />
+    <%= f.date_select :data, order: [:day, :month, :year], :use_two_digit_numbers => true %>
+  </div>
+  <div class="field">
+    <%= f.label :codigo %><br />
+    <%= f.text_field :codigo %>
+  </div>
+  <div class="field">
+    <%= f.label :arquivo %><br />
+    <%= f.file_field :arquivo %>
+  </div>
+  <div class="field">
+    <%= f.label :observacao %><br />
+    <%= f.text_area :observacao %>
+  </div>
+  <div class="field">
+    <%= f.label :enviado %><br />
+    <%= f.check_box :enviado %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
