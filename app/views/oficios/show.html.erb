@@ -1,36 +1,46 @@
-<p id="notice"><%= notice %></p>
+<h1>Dados do Ofício</h1>
 
-<p>
-  <b>Numero:</b>
-  <%= @oficio.numero %>
-</p>
+<% if notice %>
+<div class="alert alert-info">
+	<p><%= notice %></p>
+</div>
+<% end %>
+<div class="col-md-6">
+	<p>
+		<b>Número:</b>
+		<%= @oficio.numero %>
+	</p>
 
-<p>
-  <b>Data:</b>
-  <%= @oficio.data %>
-</p>
+	<p>
+		<b>Data:</b>
+		<%= @oficio.data %>
+	</p>
 
-<p>
-  <b>Codigo:</b>
-  <%= @oficio.codigo %>
-</p>
+	<p>
+		<b>Código:</b>
+		<%= @oficio.codigo %>
+	</p>
 
-<p>
-  <b>Observacao:</b>
-  <%= @oficio.observacao %>
-</p>
+	<p>
+		<b>Observação:</b>
+		<%= @oficio.observacao %>
+	</p>
 
-<p>
-  <b>Enviado:</b>
-  <%= @oficio.enviado %>
-</p>
+	<p>
+		<b>Enviado | Recebido:</b>
+		<%= @oficio.enviado? ? "Enviado" : "Recebido" %>
+	</p>
+</div>
+<div class="col-md-4 well">
+	<p>
+		<%= image_tag @oficio.arquivo.url(:miniatura) %>
+	</p>
+	<p>
+		<%= link_to "Download do arquivo original", @oficio.arquivo.url, :class => "btn btn-info" %>
+	</p>
+</div>
+<div class="col-md-10">
+	<%= link_to 'Editar dados', edit_oficio_path(@oficio) %> |
+	<%= link_to 'Voltar para página de Ofícios', oficios_path %>
+</div>
 
-<p>
-<%= image_tag @oficio.arquivo.url(:miniatura) %>
-</p>
-<p>
-<%= link_to "Download do arquivo original", @oficio.arquivo.url %>
-</p>
-
-<%= link_to 'Edit', edit_oficio_path(@oficio) %> |
-<%= link_to 'Back', oficios_path %>
