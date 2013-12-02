@@ -1,0 +1,39 @@
+<h1>Dados do Portaria</h1>
+
+<% if notice %>
+<div class="alert alert-info">
+	<p><%= notice %></p>
+</div>
+<% end %>
+<div class="col-md-6">
+	<p>
+		<b>Número:</b>
+		<%= @portarium.numero %>
+	</p>
+
+	<p>
+		<b>Data:</b>
+		<%= @portarium.data %>
+	</p>
+
+	<p>
+		<b>Observação:</b>
+		<%= @portarium.observacao %>
+	</p>
+
+
+</div>
+<div class="col-md-4 well">
+	<p>
+		<%= image_tag @portarium.arquivo.url(:miniatura) %>
+	</p>
+	<p>
+		<%= link_to "Download do arquivo original", @portarium.arquivo.url, :class => "btn btn-info" %>
+	</p>
+</div>
+<div class="col-md-10">
+	<%= link_to 'Editar dados', edit_portarium_path(@portarium) %> |
+	<%= link_to 'Voltar para página de Ofícios', portaria_path %>
+</div>
+
+

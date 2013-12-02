@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131128173151) do
+ActiveRecord::Schema.define(:version => 20131202124019) do
 
   create_table "oficios", :force => true do |t|
     t.string   "numero"
@@ -19,6 +19,18 @@ ActiveRecord::Schema.define(:version => 20131128173151) do
     t.string   "codigo"
     t.text     "observacao"
     t.boolean  "enviado"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+    t.string   "arquivo_file_name"
+    t.string   "arquivo_content_type"
+    t.integer  "arquivo_file_size"
+    t.datetime "arquivo_updated_at"
+  end
+
+  create_table "portaria", :force => true do |t|
+    t.string   "numero"
+    t.date     "data"
+    t.text     "observacao"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
     t.string   "arquivo_file_name"

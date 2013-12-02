@@ -1,4 +1,7 @@
 Docdig::Application.routes.draw do
+  resources :portaria
+
+
   resources :oficios
 
 
