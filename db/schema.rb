@@ -11,12 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131202180601) do
+ActiveRecord::Schema.define(:version => 20131203174015) do
 
   create_table "ata", :force => true do |t|
     t.string   "numero"
     t.date     "data"
     t.boolean  "ordinaria"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+    t.string   "arquivo_file_name"
+    t.string   "arquivo_content_type"
+    t.integer  "arquivo_file_size"
+    t.datetime "arquivo_updated_at"
+  end
+
+  create_table "nota", :force => true do |t|
+    t.string   "numero"
+    t.date     "data"
+    t.string   "empresa"
+    t.float    "valor"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
     t.string   "arquivo_file_name"

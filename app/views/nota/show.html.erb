@@ -1,0 +1,42 @@
+<h1>Dados da Nota Fiscal</h1>
+
+<% if notice %>
+<div class="alert alert-info">
+	<p><%= notice %></p>
+</div>
+<% end %>
+<div class="col-md-6">
+	<p>
+		<b>Número:</b>
+		<%= @notum.numero %>
+	</p>
+
+	<p>
+		<b>Data:</b>
+		<%= @notum.data %>
+	</p>
+
+	<p>
+		<b>Empresa:</b>
+		<%= @notum.empresa %>
+	</p>
+
+	<p>
+		<b>Valor total da Nota:</b>
+		<%= @notum.valor %>
+	</p>
+
+</div>
+<div class="col-md-4 well">
+	<p>
+		<%= image_tag @notum.arquivo.url(:miniatura) %>
+	</p>
+	<p>
+		<%= link_to "Download do arquivo original", @notum.arquivo.url, :class => "btn btn-info" %>
+	</p>
+</div>
+<div class="col-md-10">
+	<%= link_to 'Editar dados', edit_notum_path(@notum) %> |
+	<%= link_to 'Voltar para página de Ofícios', nota_path %>
+</div>
+
