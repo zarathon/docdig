@@ -1,4 +1,7 @@
 Docdig::Application.routes.draw do
+  root :to => 'app#index'
+  get "app/index"
+
   resources :nota
 
 
